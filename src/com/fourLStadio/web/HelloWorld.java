@@ -25,11 +25,11 @@ public class HelloWorld extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.setCharacterEncoding("gbk");
+		response.setCharacterEncoding("utf-8");
 		PrintWriter out=response.getWriter();
 		out.println("<html>");
-		out.println("<head><title>问候大爷</title></head>");
-		out.println("Servlet大爷你好！");
+		out.println("<head><title>1</title></head>");
+		out.println("Servlet锟斤拷2");
 		out.println("</html>");
 		out.close();
 	}
