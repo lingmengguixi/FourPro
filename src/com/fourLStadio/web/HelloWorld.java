@@ -29,7 +29,7 @@ public class HelloWorld extends HttpServlet{
 		PrintWriter out=response.getWriter();
 		out.println("<html>");
 		out.println("<head><title>1</title></head>");
-		out.println("Servlet��2");
+		out.println("Servlet2");
 		out.println("</html>");
 		out.close();
 	}
