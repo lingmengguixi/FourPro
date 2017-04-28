@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="李兆坤" class="useBean.user.User">
+        <property name="name" value="null"></property>
+        <property name="password" value="null"></property>
+        <property name="id" value="李兆坤"></property>
+    </bean>
+    <bean id="135" class="useBean.user.User">
+        <property name="name" value="135"></property>
+        <property name="password" value="3413"></property>
+        <property name="id" value="135"></property>
+    </bean>
+    <bean id="3131" class="useBean.user.User">
+        <property name="name" value="3131"></property>
+        <property name="password" value="365431"></property>
+        <property name="id" value="3131"></property>
+    </bean>
+    <bean id="313" class="useBean.user.User">
+        <property name="name" value="313"></property>
+        <property name="password" value="554131"></property>
+        <property name="id" value="313"></property>
+    </bean>
+    <bean id="163" class="useBean.user.User">
+        <property name="name" value="163"></property>
+        <property name="password" value="6463"></property>
+        <property name="id" value="163"></property>
+    </bean>
+    <bean id="6165" class="useBean.user.User">
+        <property name="name" value="6165"></property>
+        <property name="password" value="546"></property>
+        <property name="id" value="6165"></property>
+    </bean>
+    <bean id="1616" class="useBean.user.User">
+        <property name="name" value="1616"></property>
+        <property name="password" value="366546"></property>
+        <property name="id" value="1616"></property>
+    </bean>
+    <bean id="65416" class="useBean.user.User">
+        <property name="name" value="65416"></property>
+        <property name="password" value="222"></property>
+        <property name="id" value="65416"></property>
+    </bean>
+    <bean id="6651" class="useBean.user.User">
+        <property name="name" value="6651"></property>
+        <property name="password" value="2222"></property>
+        <property name="id" value="6651"></property>
+    </bean>
+</beans>

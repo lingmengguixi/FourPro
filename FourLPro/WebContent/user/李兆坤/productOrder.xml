@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="@1006165020" class="useBean.cart.ProductOrder">
+        <property name="id" value="@1006165020"></property>
+        <property name="count" value="2"></property>
+        <property name="bookId" value="@462057195"></property>
+        <property name="name" value="web书"></property>
+        <property name="userId" value="李兆坤"></property>
+        <property name="start" value="2017-04-28 22:16:44"></property>
+        <property name="end" value="null"></property>
+        <property name="orderStatus" value="start"></property>
+    </bean>
+    <bean id="@1250148877" class="useBean.cart.ProductOrder">
+        <property name="id" value="@1250148877"></property>
+        <property name="count" value="1"></property>
+        <property name="bookId" value="@462057195"></property>
+        <property name="name" value="web书"></property>
+        <property name="userId" value="李兆坤"></property>
+        <property name="start" value="2017-04-28 22:15:10"></property>
+        <property name="end" value="null"></property>
+        <property name="orderStatus" value="start"></property>
+    </bean>
+</beans>

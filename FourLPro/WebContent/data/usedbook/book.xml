@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="@462057195" class="useBean.entity.UsedBook">
+        <property name="webPath" value="http://201.21.55.45"></property>
+        <property name="id" value="@462057195"></property>
+        <property name="style" value="啊啊啊"></property>
+        <property name="price" value="541.0"></property>
+        <property name="name" value="web书"></property>
+        <property name="margin" value="7"></property>
+    </bean>
+    <bean id="@449120698" class="useBean.entity.UsedBook">
+        <property name="webPath" value="讣"></property>
+        <property name="id" value="@449120698"></property>
+        <property name="style" value="句话"></property>
+        <property name="price" value="11.0"></property>
+        <property name="name" value="gg"></property>
+        <property name="margin" value="55"></property>
+    </bean>
+    <bean id="@82466295" class="useBean.entity.UsedBook">
+        <property name="webPath" value="爱上行驶时"></property>
+        <property name="id" value="@82466295"></property>
+        <property name="style" value="啊声音宝箱"></property>
+        <property name="price" value="10.0"></property>
+        <property name="name" value="呀"></property>
+        <property name="margin" value="2"></property>
+    </bean>
+    <bean id="@262395330" class="useBean.entity.UsedBook">
+        <property name="webPath" value="laihere"></property>
+        <property name="id" value="@262395330"></property>
+        <property name="style" value="书1"></property>
+        <property name="price" value="10.0"></property>
+        <property name="name" value="java哈哈"></property>
+        <property name="margin" value="0"></property>
+    </bean>
+</beans>
