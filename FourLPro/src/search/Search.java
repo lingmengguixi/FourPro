@@ -23,6 +23,14 @@ public class Search {
 	 public Search(){
 		 setLimit = this.new SetLimit();
 	 }
+	 /**
+	  * 
+	  * @param dir文件目录
+	  * @param fileName文件名称
+	  * @param subString文件检索字符
+	  * 文件名称前需要加个斜杠，比如文件为data.txt,需要改为/data.txt
+	  * @return检索成功的id数组
+	  */
      public  String[] searchId(String dir,String fileName,String subString){
      	File file=new File(dir+fileName);
      	if(!file.exists()) return new String[0];
