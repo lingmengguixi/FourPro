@@ -1,0 +1,128 @@
+﻿<html><head>
+<meta charset="utf-8"/>
+<style type="text/css">
+  .float{
+  position:relative;
+  float:left;
+}
+.head {
+    width: 100%;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(1.jpg);
+    border-style: solid;
+}
+.bg2 {
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(bg2.jpg);
+    border-style: solid;
+}
+.bg3 {
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(bg.jpg);
+    border-style: solid;
+}
+p.welcomeTitle {
+    font-family: stsong;
+    text-align: center;
+    font-size: 80;
+    margin-top: 30;
+    color: greenyellow;
+}
+
+canvas.list1 {
+    border: solid #3c3c3c 1px;
+}
+</style>
+<script>
+function find(value){
+   var type=document.getElementById("type");
+   var findForm=document.getElementById("findform");
+   type.value=value;
+   findForm.submit();
+      var pre1=findForm.action;
+   var pre2=findForm.target;
+   findForm.target="iframe1";
+   findForm.action="http://localhost:8080/FourLPro/adminfind";
+   findForm.submit();
+    findForm.action=pre1;
+    findForm.target=pre2;
+}
+function refresh(){
+    var q1=document.getElementById("refresh");
+    q1.submit();
+}
+</script>
+<title>管理员专用</title>
+</head>
+<body onload="setInterval('refresh()',5000)">
+<div class="head">
+    <p class="welcomeTitle">欢迎管理员登录</p>
+</div>
+<form id="refresh" name="refresh" action="http://localhost:8080/FourLPro/refresh1" method="post"
+target="iframe211">
+</form>
+<div>
+   <div id="div11" style="width:100%;height:100px;">
+ 
+      <form name="findform" id="findform" action="http://localhost:8080/FourLPro/adminfind" method="post"
+target="iframe2">
+      <div id="div111" class="float" style="">
+         <input id="input1" name="input1" type="text" value="输入查询关键字" class="float" style="margin:28 0 0 20;height:40px;width:300px;">
+         <input id="type" name="type" type="hidden">
+      </div>
+      <div class="float">
+         <ul id="ul1" style="list-style-type:none;margin:23 0 0 -10;line-height:1.5;">
+             <li>
+                 <button type="button" name="button1" id="button1" onclick="find('user')">
+                   查询用户
+                 </button>
+             </li>
+             <li>
+                 <button type="button" onclick="find('order')">
+                   查询订单
+                 </button>
+             </li>
+         </ul>
+      </div>
+   </div>
+   </form>
+   <div id="div12" style="width:100%;height:500px;">
+      <div class="float" id="div121" style="width=30%;height=500px;">
+       
+       <iframe id="iframe1" name="iframe1" class="bg2" href="" height="500" width="100%"        
+>
+        不支持iframe
+       </iframe>
+      </div>
+      <div id="div122" class="float" style="width:70%; height:500px;">
+           <iframe id="iframe2" name="iframe2" class="bg3" height="500" width="99%">
+             不支持iframe
+           </iframe>
+      </div>
+   </div>
+</div>
+<div>
+   <div id="div21" style="height:400px;width:100%;">
+     <iframe id="iframe211" name="iframe211" height="400" width="100%">
+       不支持
+     </iframe>
+   </div>
+   <div id="div22" style="height:100px;width:100%;">
+     <textarea id="textarea221" style="max-height=100px;min-height:100px;max-width:100%;min-width:100%;">
+     </textarea>
+   </div>
+   <div id="div23" style="width:100%;height:100px;">
+     <button type="button" style="float:right;" >
+     发送
+     </button>
+   </div>
+</div>
+</body></html>
