@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8" import="java.util.Date"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<jsp:useBean id="retuen" scope="request" class="java.lang.String" />
+<jsp:useBean id="type" scope="request" class="java.lang.String" />
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
