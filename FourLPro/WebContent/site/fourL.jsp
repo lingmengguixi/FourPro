@@ -17,6 +17,7 @@
 			$('.activity_caterogy1').hide();
 		});
 	});
+	
 	$(function() {
 		$('.activity_caterogy2').hide();
 		$('.second_category2').mousemove(function() {
