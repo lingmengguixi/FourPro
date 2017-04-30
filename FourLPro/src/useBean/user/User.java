@@ -6,8 +6,9 @@ import useBean.write.UseBean;
 import useBean.write.Write;
 
 public class User implements UseBean{
-    private String name="流量";
-    private String password;
+ 
+    private String name;
+   private String password;
     private String id;
 	public String getName() {
 		return name;
