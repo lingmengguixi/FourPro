@@ -10,32 +10,31 @@ import useBean.entity.UsedBook;
 import useBean.write.UseBean;
 
 public class Search {
-	SetLimit setLimit;
-	 public class SetLimit{
-	 public boolean name=true;
-	 public boolean style=true;
-	 public boolean price=false;
-	 public boolean margin=true;
-	 public boolean hasMargin=true;
-	 public double startPrice=0;
-	 public double endPrice=1e20;
-	}
+	SetLimit setLimit=new SetLimit();
+	private String geshi="(,|\\s)+";
 	 public Search(){
-		 setLimit = this.new SetLimit();
 	 }
+	 /**
+	  * 
+	  * @param dir文件目录
+	  * @param fileName文件名称
+	  * @param subString文件检索字符
+	  * 文件名称前需要加个斜杠，比如文件为data.txt,需要改为/data.txt
+	  * @return检索成功的id数组
+	  */
      public  String[] searchId(String dir,String fileName,String subString){
      	File file=new File(dir+fileName);
-     	if(!file.exists()) return new String[0];
+     	if(!file.exists()) return null;
      	ArrayList<String> idS=new ArrayList<String>();
-    	String[] sub=subString.split("(,|\\s)+");
-    	int space=0;
+    	String[] sub=subString.split(geshi);
+     int space=0;
         for(int i=0;i<sub.length;i++){
         	if(sub[i].length()==0) {
         		space++;
         		continue;
         	}
         	sub[i-space]=sub[i].toLowerCase();
-        	//System.out.println(sub[i-space]);
+        	System.out.println(sub[i-space]);
         }
     	ApplicationContext ctx=new FileSystemXmlApplicationContext(dir+fileName);
 		String[] id=ctx.getBeanDefinitionNames();
@@ -56,7 +55,18 @@ public class Search {
 			}
 			if(!find&setLimit.style){
 				find=true;
-				  String p=ctx.getBean(id[i],UsedBook.class).getStyle().toLowerCase();
+				 String p=ctx.getBean(id[i],UsedBook.class).getStyle().toLowerCase();
+			      int j=0;
+				  for(j=0;j<sub.length-space;j++){
+			    	if(p.contains(sub[j])) {
+			    		break;
+			    	}
+			      }
+				  if(j>=sub.length-space) find=false;
+			}
+			if(!find&setLimit.id){
+				find=true;
+				 String p=id[i].toLowerCase();
 			      int j=0;
 				  for(j=0;j<sub.length-space;j++){
 			    	if(p.contains(sub[j])) {
@@ -73,7 +83,7 @@ public class Search {
            }
            if(find&setLimit.margin){
         	   int margin=ctx.getBean(id[i],UsedBook.class).getMargin();
-        	   if(margin>0&&setLimit.hasMargin||margin<=0&&!setLimit.hasMargin){
+       	   if(margin>0&&setLimit.hasMargin||margin<=0&&!setLimit.hasMargin){
         		   
         	   }else find=false;
            }

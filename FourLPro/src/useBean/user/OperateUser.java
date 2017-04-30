@@ -2,10 +2,13 @@ package useBean.user;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.lang.NullPointerException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
@@ -14,9 +17,11 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 import useBean.entity.OperateShoppingCart;
 import useBean.entity.Order;
 import useBean.entity.ShoppingCart;
+import useBean.history.Talk;
+import useBean.write.Write;
 
 public class OperateUser {
-	private User user;
+	private User user; 
 	private ShoppingCart cart;
 	private String userFilePathRoot;
 	private static final String cartName="/cart.xml";
@@ -52,20 +57,21 @@ public class OperateUser {
     	ApplicationContext userctx;
     	String[] id;
     	String context=user.toString();
-    	
+    	  
     	if(allUserFile.exists()) {
     		userctx=new FileSystemXmlApplicationContext("WebContent/user/user.xml");
     	    id=userctx.getBeanDefinitionNames();
-    	    for(String id1:id){
+    	    for(String id1:id){ 
         	User user2=userctx.getBean(id1,User.class);
+        	
         	if(user.getId().equals(id1)){
         		continue;
         	}
         	context+=user2;
            }
     	}
-        FileWriter fileout = new FileWriter("WebContent/user/usertemp.xml"); 
-        BufferedWriter out = new BufferedWriter(fileout);
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("WebContent/user/usertemp.xml"),"utf-8"));
+        
         out.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"+
 "<beans xmlns=\"http://www.springframework.org/schema/beans\"\n"+
 "    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"+

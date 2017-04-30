@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import search.Search;
-import search.Search.SetLimit;
+import search.SetLimit;
 import useBean.user.OperateUser;
 import useBean.user.User;
 

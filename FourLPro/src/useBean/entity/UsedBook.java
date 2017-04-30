@@ -11,7 +11,7 @@ public class UsedBook implements UseBean{
     private String id;//商品代号
     private String style;
     private double price;
-    private String name;
+    private String name; 
     private int margin;
     private static final String bookFilePathRoot="WebContent/data/usedbook";
     private static final String bookFileName="/book.xml";

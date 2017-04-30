@@ -2,8 +2,12 @@ package useBean.write;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
@@ -23,8 +27,7 @@ public  class Write {
     	if(!fileRoot.exists()) fileRoot.mkdirs();
     	if(!fileTemp.exists()) fileTemp.createNewFile();
     	String context=bean.toString();
-    	FileWriter fileout = new FileWriter(dir+fileName+"temp");
-		BufferedWriter out = new BufferedWriter(fileout);
+		BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(dir+fileName+"temp"),"utf-8"));
 		out.write(fileHeadMesage);
 		out.write(context);
 		out.write(fileTailMesage);
@@ -43,7 +46,7 @@ public  class Write {
     	File fileTemp=new File(dir+fileName+"temp");
     	if(!fileRoot.exists()) fileRoot.mkdirs();
     	if(!fileTemp.exists()) fileTemp.createNewFile();
-    	String context=bean.toString();
+    	String context="";
     	if(file.exists()) {
     		ApplicationContext ctx=new FileSystemXmlApplicationContext(dir+fileName);
     	    String[] id=ctx.getBeanDefinitionNames();
@@ -55,8 +58,8 @@ public  class Write {
         	context+=w;
            }
     	}
-    	FileWriter fileout = new FileWriter(dir+fileName+"temp");
-		BufferedWriter out = new BufferedWriter(fileout);
+    	context+=bean.toString();
+    	BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(dir+fileName+"temp"),"utf-8"));
 		out.write(fileHeadMesage);
 		out.write(context);
 		out.write(fileTailMesage);
@@ -87,8 +90,8 @@ public  class Write {
         	context+=w;
            }
     	}
-    	FileWriter fileout = new FileWriter(dir+fileName+"temp");
-		BufferedWriter out = new BufferedWriter(fileout);
+    	BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(dir+fileName+"temp"),"utf-8"));
+		
 		out.write(fileHeadMesage);
 		out.write(context);
 		out.write(fileTailMesage);
@@ -113,5 +116,9 @@ public  class Write {
     		}else return "@"+newId;
         }
     }
-  
+    public void WriteAsTxt(String path,Object value) throws IOException{
+    	BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path,true),"utf-8"));
+    	out.write(value.toString());
+    	out.close();
+    }
 }

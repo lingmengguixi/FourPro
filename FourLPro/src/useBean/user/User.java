@@ -1,7 +1,12 @@
 package useBean.user;
 
-public class User implements java.io.Serializable{
-    private String name;
+import java.io.IOException;
+
+import useBean.write.UseBean;
+import useBean.write.Write;
+
+public class User implements UseBean{
+    private String name="流量";
     private String password;
     private String id;
 	public String getName() {
@@ -9,7 +14,7 @@ public class User implements java.io.Serializable{
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
+	} 
 	public String getPassword() {
 		return password;
 	}
@@ -29,5 +34,23 @@ public class User implements java.io.Serializable{
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	/**
+	 * 不允许使用
+	 */
+	@Override
+	@Deprecated
+	public void remove() throws IOException {
+		// TODO Auto-generated method stub
+
+	}
+	/**
+	 * 该方法过时，请使用用户操作类实现加入
+	 */
+	@Override
+	@Deprecated
+	public void add() throws IOException {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -9,3 +9,4 @@ public interface UseBean extends java.io.Serializable{
    public void add() throws IOException;
    
 }
+ 

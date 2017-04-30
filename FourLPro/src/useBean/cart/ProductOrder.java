@@ -82,11 +82,11 @@ public class ProductOrder extends Order implements UseBean{
 		   calendar.setTime(date);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
          return format.format(calendar.getTime());
-		   
+		    
 	}
 	/**
 	 * 得到订单名字，一般为书名
-	 */
+	 */ 
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stu

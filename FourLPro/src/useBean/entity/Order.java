@@ -6,7 +6,7 @@ public class Order {
     private int count=1;
 	public String getId() {
 		return id;
-	}
+	} 
     /**
      * 不建议使用,直接用购物车操作类的add，它会直接为订单分配id;
      * @param id

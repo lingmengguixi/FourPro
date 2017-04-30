@@ -42,7 +42,7 @@ public class ShoppingCart {
 		for(Order order:orderCount){
 			subOrder=subOrder+"<ref bean=\""+order.getId()+"\" />\n";
 			subOrder1+=order;
-		}
+		} 
 		
 		return 	
     "    <bean id=\""+getId()+"\" class=\""+ShoppingCart.class.getName()+"\">\n"+
