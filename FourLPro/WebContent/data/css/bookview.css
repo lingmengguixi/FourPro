@@ -1,0 +1,25 @@
+.view{width:1210px;padding-left:5px;padding-right:5px;margin-right:20px;}
+.book{
+height:372px;
+width:220px;
+margin:1 1 1 1px;
+padding:1 1 1 1px;
+border-style:outset;
+border-width:3px;
+border-color:transparent;
+position:relative;
+float:left;
+}
+.book:hover{overflow:visible;z-index:3;background:#fff;
+   border-color:blue;
+}
+div>div>img{max-width:220;height:auto;}
+  body.pg{font:12px/1.5 tahoma,arial,b8bf53,sans-serif;}
+  body textarea{font:12px/1.5 tahoma,arial,"\5b8b\4f53";}
+.booktitle:hover{
+  text-decoration:underline;
+  color:#c10001;
+}
+body{
+	background-color: yellow;
+}
